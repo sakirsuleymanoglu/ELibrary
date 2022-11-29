@@ -9,24 +9,24 @@ namespace ELibrary.WebAPI.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-        readonly IEntityService _efService;
+        readonly IEntityService _entityService;
 
-        public BooksController(IEntityService efService)
+        public BooksController(IEntityService entityService)
         {
-            _efService = efService;
+            _entityService = entityService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetList()
         {
-            var books = await _efService.Lister.GetListAsync<Book>();
+            var books = await _entityService.Lister.GetListAsync<Book>();
             return Ok(books);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var book = await _efService.Getter.GetAsync<Book>(x => x.Id == id);
+            var book = await _entityService.Getter.GetAsync<Book>(x => x.Id == id);
             if (book == null)
                 return NotFound();
             return Ok(book);
@@ -35,31 +35,31 @@ namespace ELibrary.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Book book)
         {
-            var createdBook = await _efService.Creator.CreateAsync(book);
-            await _efService.Saver.SaveAsync();
+            var createdBook = await _entityService.Creator.CreateAsync(book);
+            await _entityService.Saver.SaveAsync();
             return Created("", createdBook);
         }
 
         [HttpPut]
         public async Task<IActionResult> Update(Book book)
         {
-            var updateBook = await _efService.Getter.GetAsync<Book>(x => x.Id == book.Id, options => options.DisableTracking());
+            var updateBook = await _entityService.Getter.GetAsync<Book>(x => x.Id == book.Id, options => options.DisableTracking());
             if (updateBook == null)
                 return NotFound();
             updateBook.Name = book.Name;
-            _efService.Updater.Update(updateBook);
-            await _efService.Saver.SaveAsync();
+            _entityService.Updater.Update(updateBook);
+            await _entityService.Saver.SaveAsync();
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var deleteBook = await _efService.Getter.GetAsync<Book>(x => x.Id == id, options => options.DisableTracking());
+            var deleteBook = await _entityService.Getter.GetAsync<Book>(x => x.Id == id, options => options.DisableTracking());
             if (deleteBook == null)
                 return NotFound();
-            _efService.Deleter.Delete(deleteBook);
-            await _efService.Saver.SaveAsync();
+            _entityService.Deleter.Delete(deleteBook);
+            await _entityService.Saver.SaveAsync();
             return NoContent();
         }
     }
