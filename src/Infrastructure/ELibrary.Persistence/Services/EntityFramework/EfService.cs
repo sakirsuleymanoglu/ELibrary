@@ -15,5 +15,6 @@ namespace ELibrary.Persistence.Services.EntityFramework
         public IEntityGetter Getter => new EfEntityGetter(_context);
         public IEntityLister Lister => new EfEntityLister(_context);
         public IEntityCounter Counter => new EfEntityCounter(_context);
+        public IEntitySearcher Searcher => new EfEntitySearcher(_context);
     }
 }
