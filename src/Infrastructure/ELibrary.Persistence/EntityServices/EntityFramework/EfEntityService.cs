@@ -1,13 +1,12 @@
 ﻿using ELibrary.Application.Abstractions.EntityServices;
 using ELibrary.Persistence.Contexts.EntityFramework;
-using ELibrary.Persistence.EntityOperations.EntityFramework;
 
 namespace ELibrary.Persistence.EntityServices.EntityFramework
 {
-    public class EfService : IEntityService
+    public class EfEntityService : IEntityService
     {
         readonly ApplicationDbContext _context;
-        public EfService(ApplicationDbContext context) => _context = context;
+        public EfEntityService(ApplicationDbContext context) => _context = context;
         public IEntitySaver Saver => new EfEntitySaver(_context);
         public IEntityCreator Creator => new EfEntityCreator(_context);
         public IEntityDeleter Deleter => new EfEntityDeleter(_context);
