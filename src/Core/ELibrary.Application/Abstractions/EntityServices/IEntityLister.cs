@@ -1,4 +1,4 @@
-﻿namespace ELibrary.Application.Abstractions.EntityOperations
+﻿namespace ELibrary.Application.Abstractions.EntityServices
 {
     public interface IEntityLister
     {

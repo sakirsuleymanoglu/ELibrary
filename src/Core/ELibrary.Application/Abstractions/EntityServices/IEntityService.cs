@@ -1,8 +1,6 @@
-﻿using ELibrary.Application.Abstractions.EntityOperations;
-
-namespace ELibrary.Application.Abstractions.Services.EntityFramework
+﻿namespace ELibrary.Application.Abstractions.EntityServices
 {
-    public interface IEfService
+    public interface IEntityService
     {
         IEntitySaver Saver { get; }
         IEntityCreator Creator { get; }

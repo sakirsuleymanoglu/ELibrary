@@ -1,7 +1,7 @@
-﻿using ELibrary.Application.Abstractions.EntityOperations;
+﻿using ELibrary.Application.Abstractions.EntityServices;
 using Microsoft.EntityFrameworkCore;
 
-namespace ELibrary.Persistence.EntityOperations.EntityFramework
+namespace ELibrary.Persistence.EntityServices.EntityFramework
 {
     public class EfEntityUpdater : IEntityUpdater
     {

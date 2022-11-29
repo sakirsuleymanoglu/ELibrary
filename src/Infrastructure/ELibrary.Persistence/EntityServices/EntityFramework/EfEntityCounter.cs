@@ -1,8 +1,8 @@
-﻿using ELibrary.Application.Abstractions.EntityOperations;
+﻿using ELibrary.Application.Abstractions.EntityServices;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace ELibrary.Persistence.EntityOperations.EntityFramework
+namespace ELibrary.Persistence.EntityServices.EntityFramework
 {
     public class EfEntityCounter : IEntityCounter
     {

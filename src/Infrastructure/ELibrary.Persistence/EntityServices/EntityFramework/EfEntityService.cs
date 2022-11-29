@@ -1,11 +1,10 @@
-﻿using ELibrary.Application.Abstractions.EntityOperations;
-using ELibrary.Application.Abstractions.Services.EntityFramework;
+﻿using ELibrary.Application.Abstractions.EntityServices;
 using ELibrary.Persistence.Contexts.EntityFramework;
 using ELibrary.Persistence.EntityOperations.EntityFramework;
 
-namespace ELibrary.Persistence.Services.EntityFramework
+namespace ELibrary.Persistence.EntityServices.EntityFramework
 {
-    public class EfService : IEfService
+    public class EfService : IEntityService
     {
         readonly ApplicationDbContext _context;
         public EfService(ApplicationDbContext context) => _context = context;

@@ -1,4 +1,4 @@
-﻿using ELibrary.Application.Abstractions.Services.EntityFramework;
+﻿using ELibrary.Application.Abstractions.EntityServices;
 using ELibrary.Application.Extensions;
 using ELibrary.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -9,9 +9,9 @@ namespace ELibrary.WebAPI.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-        readonly IEfService _efService;
+        readonly IEntityService _efService;
 
-        public BooksController(IEfService efService)
+        public BooksController(IEntityService efService)
         {
             _efService = efService;
         }

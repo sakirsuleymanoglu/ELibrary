@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace ELibrary.Application.Abstractions.EntityOperations
+namespace ELibrary.Application.Abstractions.EntityServices
 {
     public interface IEntityGetter
     {
