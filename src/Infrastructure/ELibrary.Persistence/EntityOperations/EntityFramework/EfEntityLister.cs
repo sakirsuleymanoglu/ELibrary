@@ -1,4 +1,4 @@
-﻿using ELibrary.Application.Abstractions.EntityFramework;
+﻿using ELibrary.Application.Abstractions.EntityOperations;
 using Microsoft.EntityFrameworkCore;
 
 namespace ELibrary.Persistence.EntityOperations.EntityFramework

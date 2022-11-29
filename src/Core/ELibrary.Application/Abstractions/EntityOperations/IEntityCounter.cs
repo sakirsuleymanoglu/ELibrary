@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace ELibrary.Application.Abstractions.EntityFramework
+namespace ELibrary.Application.Abstractions.EntityOperations
 {
     public interface IEntityCounter
     {

@@ -1,4 +1,6 @@
-﻿namespace ELibrary.Application.Abstractions.EntityFramework
+﻿using ELibrary.Application.Abstractions.EntityOperations;
+
+namespace ELibrary.Application.Abstractions.Services.EntityFramework
 {
     public interface IEfService
     {

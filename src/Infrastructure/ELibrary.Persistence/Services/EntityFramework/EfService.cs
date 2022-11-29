@@ -1,4 +1,5 @@
-﻿using ELibrary.Application.Abstractions.EntityFramework;
+﻿using ELibrary.Application.Abstractions.EntityOperations;
+using ELibrary.Application.Abstractions.Services.EntityFramework;
 using ELibrary.Persistence.Contexts.EntityFramework;
 using ELibrary.Persistence.EntityOperations.EntityFramework;
 

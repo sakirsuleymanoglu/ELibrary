@@ -1,4 +1,4 @@
-﻿using ELibrary.Application.Abstractions.EntityFramework;
+﻿using ELibrary.Application.Abstractions.Services.EntityFramework;
 using ELibrary.Application.Extensions;
 using ELibrary.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
